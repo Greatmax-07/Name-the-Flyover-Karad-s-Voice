@@ -19,9 +19,9 @@ printf("3] Non-Offensive: Suggestions should not include terms that could be off
 printf("4] Cultural or Historical Significance: Priority will be given to names that honor local history, freedom fighters, or significant events.\n");
 printf("5] The name should not exceed 25 characters.\n\n");
 
-  printf("Please Enter your name:");
+  printf("Please Enter your name: ");
   fgets(name,sizeof(name),stdin);
-  printf("Please enter you Gmail ID:");
+  printf("Please enter you Gmail ID: ");
 
   while(1){
         fgets(gmail,sizeof(gmail),stdin);
@@ -34,7 +34,7 @@ printf("5] The name should not exceed 25 characters.\n\n");
 
         //gmailcpy[input-1]='\0';
         //printf("%s",gmailcpy);
-        int result=strncmp(gmailcpy,cmp,10);
+        int result=strncmp(gmailcpy,cmp,cmplen);
         if(strchr(gmail,space)!=NULL){
             printf("Gmail ID must not have spaces.\n");
         }
@@ -53,6 +53,7 @@ printf("5] The name should not exceed 25 characters.\n\n");
             if(size<=25){
                 pname[strcspn(pname, "\n")]='\0';
                 strcat(pname,project);
+                printf("\n");
                 break;
             }
             else{
